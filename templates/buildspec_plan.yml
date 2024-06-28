@@ -22,6 +22,8 @@ phases:
       - "yum -y install terraform"
   build:
     commands:
+      - "echo ${CODEBUILD_SRC_DIR}"
+      - "echo ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
       - "cd ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
       - "terraform init"
       - "echo ## TERRAFORM PLAN : Generate the Terraform Plan"
