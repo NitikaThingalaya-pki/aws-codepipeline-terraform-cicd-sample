@@ -23,6 +23,7 @@ phases:
   build:
     commands:
       - curl -o wizcli https://downloads.wiz.io/wizcli/latest/wizcli-linux-amd64 && chmod +x wizcli
+      - uname -m
       - ./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET"
       - ./wizcli dir scan --path .
       - ./wizcli iac scan --path .
