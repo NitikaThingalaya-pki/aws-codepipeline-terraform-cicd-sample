@@ -19,9 +19,12 @@ phases:
       - "yum install -y yum-utils"
       - "yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo"
       - "yum -y install terraform"
-      - "curl -o wizcli https://downloads.wiz.io/wizcli/latest/wizcli-linux-amd64 && chmod +x wizcli"
   build:
     commands:
+       - curl -o wizcli https://downloads.wiz.io/wizcli/latest/wizcli-linux-arm64 && chmod +x wizcli
+      - ./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET"
+      - ./wizcli dir scan --path .
+      - ./wizcli iac scan --path .
       - "echo ${CODEBUILD_SRC_DIR}"
       - "echo ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
       - "./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET""
