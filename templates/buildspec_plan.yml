@@ -25,9 +25,10 @@ phases:
     commands:
       - "echo ${CODEBUILD_SRC_DIR}"
       - "echo ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
-      - "./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET""
-      - "./wizcli dir scan --path ."
-      - "./wizcli iac scan --path ."
+      - "ls -l wizcli"
+      - ./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET"
+      - ./wizcli dir scan --path .
+      - ./wizcli iac scan --path .
       - "cd ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
       - "terraform init"
       - "echo ## TERRAFORM PLAN : Generate the Terraform Plan"
