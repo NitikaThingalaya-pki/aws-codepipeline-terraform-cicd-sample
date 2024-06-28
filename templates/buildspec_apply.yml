@@ -27,9 +27,6 @@ phases:
       - ./wizcli iac scan --path .
       - "echo ${CODEBUILD_SRC_DIR}"
       - "echo ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
-      - "./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET""
-      - "./wizcli dir scan --path ."
-      - "./wizcli iac scan --path ."
       - "cd ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
       - "echo ## TERRAFORM APPLY : Starting with the Terraform Apply"
       - "terraform apply -input=false tfapply"
