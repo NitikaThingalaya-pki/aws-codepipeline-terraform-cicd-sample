@@ -26,9 +26,9 @@ phases:
       - echo "Downloaded wizcli to $(pwd)"
       - ls
       - file wizcli
-      - ./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET"
-      - ./wizcli dir scan --path .
-      - ./wizcli iac scan --path .
+      - sh ./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET"
+      - sh ./wizcli dir scan --path .
+      - sh ./wizcli iac scan --path .
       - "echo ${CODEBUILD_SRC_DIR}"
       - "echo ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
       - "cd ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
