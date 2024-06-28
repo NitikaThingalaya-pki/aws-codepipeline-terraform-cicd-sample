@@ -10,12 +10,12 @@ variable "instance_type" {
 
 variable "key_name" {
   description = "Name of the existing EC2 key pair"
-  default = "2023"
+  default = "CICD_Ubuntu_Key"
 }
 
 variable "s3_bucket_name" {
   description = "Name of the S3 bucket for remote state"
-  default = "tfdemo16112023"
+  default = "codepipeline-us-east-1-611786723258"
 }
 
 variable "name" {
