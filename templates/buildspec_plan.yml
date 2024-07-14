@@ -22,6 +22,9 @@ phases:
       - "yum -y install terraform"
   build:
     commands:
+      - "echo ${CODEBUILD_SRC_DIR}"
+      - "echo ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
+      - "cd ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
       - "terraform init"
       - "echo ## TERRAFORM PLAN : Generate the Terraform Plan"
       - "terraform plan -out tfapply"
@@ -29,9 +32,7 @@ phases:
       - ./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET"
       - ./wizcli dir scan --path .
       - ./wizcli iac scan --path .
-      - "echo ${CODEBUILD_SRC_DIR}"
-      - "echo ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
-      - "cd ${CODEBUILD_SRC_DIR}/${CODE_SRC_DIR}"
+
 artifacts:
   files:
     - '**/*'
