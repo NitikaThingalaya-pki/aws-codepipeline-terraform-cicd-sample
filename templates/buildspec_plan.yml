@@ -11,6 +11,9 @@ env:
   variables:
     CODE_SRC_DIR: "."
     # TF_VERSION: "1.6.4"
+  secrets-manager:
+    WIZ_CLIENT_ID: "Wiz/CICD:WIZ_CLIENT_ID"
+    WIZ_CLIENT_SECRET: "Wiz/CICD:WIZ_CLIENT_SECRET"
 
 phases:
   install:
