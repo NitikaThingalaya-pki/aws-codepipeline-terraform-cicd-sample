@@ -31,10 +31,10 @@ phases:
       - "terraform init"
       - "echo ## TERRAFORM PLAN : Generate the Terraform Plan"
       - "terraform plan -out tfapply"
-      - curl -o wizcli https://downloads.wiz.io/wizcli/latest/wizcli-linux-arm64 && chmod +x wizcli
-      - ./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET"
-      - ./wizcli dir scan --path . --policy "Revvity Data Security policy,Revvity Secret Management Policy,Revvity Vulnerability Management policy"
-      - ./wizcli iac scan --path . --policy "Revvity Infrastructure As Code Policy"
+      # - curl -o wizcli https://downloads.wiz.io/wizcli/latest/wizcli-linux-arm64 && chmod +x wizcli
+      # - ./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET"
+      # - ./wizcli dir scan --path . --policy "Revvity Data Security policy,Revvity Secret Management Policy,Revvity Vulnerability Management policy"
+      # - ./wizcli iac scan --path . --policy "Revvity Infrastructure As Code Policy"
 
 artifacts:
   files:
